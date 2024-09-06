@@ -1,3 +1,73 @@
+# Aplicação Express.js com Processamento Intensivo
+
+Esta aplicação Node.js utiliza o framework [Express](https://expressjs.com/) para criar um servidor que simula um processamento intensivo, calculando números de Fibonacci com base em uma complexidade definida via query string.
+
+## Requisitos
+
+- [Node.js](https://nodejs.org/) (versão 12 ou superior)
+- [Express](https://expressjs.com/)
+
+## Instalação
+
+1. Clone o repositório:
+
+```bash
+git clone <url-do-repositorio>
+cd <nome-do-repositorio>
+```
+
+2. Instale as dependências:
+
+```bash
+npm install
+```
+
+## Uso
+
+### Iniciar o Servidor
+
+Para iniciar o servidor Express, execute o comando:
+
+```bash
+node app.js
+```
+
+O servidor será iniciado na porta `3000` e estará ouvindo requisições no endpoint `/process`.
+
+### Endpoint `/process`
+
+O endpoint `/process` simula um processamento intensivo, calculando a sequência de Fibonacci. Você pode customizar o nível de complexidade e o valor de Fibonacci a ser calculado utilizando parâmetros de query string.
+
+#### Exemplo de Requisição
+
+```bash
+http://localhost:3000/process?n=10&complexity=5
+```
+
+- `n`: Define o número de Fibonacci a ser calculado (padrão é 30).
+- `complexity`: Define o nível de complexidade da operação, aumentando o número de iterações (padrão é 1).
+
+#### Exemplo de Resposta
+
+```json
+{
+  "message": "Processamento concluído",
+  "executionTime": 2500
+}
+```
+
+- `executionTime`: Tempo total de execução da operação em milissegundos.
+
+### Modificar Parâmetros
+
+Você pode ajustar o comportamento do processamento alterando os parâmetros na URL, como no exemplo abaixo:
+
+- Para calcular o 15º número de Fibonacci com uma complexidade de 3:
+
+```bash
+http://localhost:3000/process?n=15&complexity=3
+```
+
 # Teste de Carga com K6
 Este repositório contém um script para realizar testes de carga utilizando a ferramenta K6. O teste faz requisições HTTP a uma URL especificada e gera um relatório HTML com o resumo dos resultados.
 
