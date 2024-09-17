@@ -5,13 +5,10 @@ FROM node:20.17.0-alpine
 WORKDIR /app
 
 # Copia os arquivos da aplicação para o container
-COPY package*.json ./
+COPY . .
 
 # Instala as dependências
 RUN npm install
-
-# Copia o restante dos arquivos da aplicação
-COPY . .
 
 # Exporta a porta 3000 do container para a máquina host
 EXPOSE 3000
